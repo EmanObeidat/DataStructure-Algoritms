@@ -6,50 +6,56 @@ I created a two class one for linked list and other for Node and used three meth
 ```
 # Solution
 ```
-import pytest
-from Linked_List.linkedList import LinkedList,Node
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
 
-def test_linked_list():
-    # Create an empty linked list
-    my_list = LinkedList()
+class LinkedList:
+    def __init__(self):
+        self.head = None
 
-    # Test inserting values
-    my_list.insert('c')
-    my_list.insert('b')
-    my_list.insert('a')
+    def insert(self, value):
+        new_node = Node(value)
+        if self.head is None:
+            self.head = new_node
+        else:
+            new_node.next = self.head
+            self.head = new_node
 
-    # Test includes() method
-    assert my_list.includes('b') is True
-    assert my_list.includes('d') is False
+    def includes(self, value):
+        current = self.head
+        while current:
+            if current.value == value:
+                return True
+            current = current.next
+        return False
 
-    # Test to_string() method
-    expected_output = "{ a } -> { b } -> { c } -> NULL"
-    assert my_list.to_string() == expected_output
+    def to_string(self):
+        if self.head is None:
+            return "NULL"
+        current = self.head
+        result = ""
+        while current:
+            result += "{ " + str(current.value) + " } -> "
+            current = current.next
+        result += "NULL"
+        return result
 
-    # Test inserting additional value
-    my_list.insert('d')
-    expected_output = "{ d } -> { a } -> { b } -> { c } -> NULL"
-    assert my_list.to_string() == expected_output
+# Create an empty linked list
+my_list = LinkedList()
 
-    # Test Node objects
-    node_d = my_list.head
-    node_a = node_d.next
-    node_b = node_a.next
-    node_c = node_b.next
+# Insert values
+my_list.insert('c')
+my_list.insert('b')
+my_list.insert('a')
 
-    assert node_d.value == 'd'
-    assert node_a.value == 'a'
-    assert node_b.value == 'b'
-    assert node_c.value == 'c'
-    assert node_d.next == node_a
-    assert node_a.next == node_b
-    assert node_b.next == node_c
-    assert node_c.next is None
+# Check if a value exists
+print(my_list.includes('b'))  # Output: True
+print(my_list.includes('d'))  # Output: False
 
-    print("All tests passed!")
-
-# Run the test
-test_linked_list()
+# Convert the linked list to a string representation
+print(my_list.to_string())  # Output: "{ a } -> { b } -> { c } -> NULL"
 
 
 ```
