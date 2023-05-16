@@ -1,38 +1,21 @@
+# White Board
+![White Board](./Untitled%20(11).jpg)
+# Approach & Efficiency
+```
+I created a two class one for linked list and other for Node and used three methods like append , insert after and insert before
+```
+# Solution
+```
 class Node:
     def __init__(self, value):
         self.value = value
         self.next = None
 
+
 class LinkedList:
     def __init__(self):
         self.head = None
 
-    def insert(self, value):
-        new_node = Node(value)
-        if self.head is None:
-            self.head = new_node
-        else:
-            new_node.next = self.head
-            self.head = new_node
-
-    def includes(self, value):
-        current = self.head
-        while current:
-            if current.value == value:
-                return True
-            current = current.next
-        return False
-
-    def to_string(self):
-        if self.head is None:
-            return "NULL"
-        current = self.head
-        result = ""
-        while current:
-            result += "{ " + str(current.value) + " } -> "
-            current = current.next
-        result += "NULL"
-        return result
     def append(self, new_value):
         new_node = Node(new_value)
         if self.head is None:
@@ -66,23 +49,22 @@ class LinkedList:
         if current:
             new_node.next = current.next
             current.next = new_node
+   
 
-# Create an empty linked list
+    
+
+
+# Example usage
 my_list = LinkedList()
-
-# Insert values
-my_list.insert('c')
-my_list.insert('b')
-my_list.insert('a')
 my_list.append(1)
 my_list.append(2)
 my_list.append(3)
 my_list.insert_before(2, 5)
 my_list.insert_after(2, 7)
-
-# Check if a value exists
-print(my_list.includes('b'))  # Output: True
-print(my_list.includes('d'))  # Output: False
-
-# Convert the linked list to a string representation
-print(my_list.to_string())  # Output: "{ a } -> { b } -> { c } -> NULL"
+```
+ ## The LinkedList class has three main methods:
+ ```
+ 1.Append: The append method adds a new node to the end of the linked list
+ 2.Insert Before: The insert_before method inserts a new node before the first occurrence of a specified value.
+ 3.Insert After: The insert_after method inserts a new node after the first occurrence of a specified value. Similar to the insert before operation
+ ```
