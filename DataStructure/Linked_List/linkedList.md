@@ -1,5 +1,5 @@
  # WHITE BOARD
-![white board](./Untitled%20(11).jpg)
+![white board](./Untitled%20(13).jpg)
 # Approach & Efficiency
 ```
 I created a two class one for linked list and other for Node and used three methods like insert , include and to string
