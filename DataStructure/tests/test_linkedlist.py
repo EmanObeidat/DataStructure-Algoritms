@@ -1,45 +1,100 @@
 import pytest
 from Linked_List.linkedList import LinkedList,Node
 
-def test_linked_list():
-    # Create an empty linked list
-    my_list = LinkedList()
 
-    # Test inserting values
-    my_list.insert('c')
-    my_list.insert('b')
-    my_list.insert('a')
 
-    # Test includes() method
-    assert my_list.includes('b') is True
-    assert my_list.includes('d') is False
+def test_emptyLinkedList():
+    linked_list = LinkedList()
+    assert linked_list.head == None
 
-    # Test to_string() method
-    expected_output = "{ a } -> { b } -> { c } -> NULL"
-    assert my_list.to_string() == expected_output
+def test_insert_linked_list():
+    linked_list = LinkedList()
+    linked_list.insert(5)
+    assert linked_list.head.value == 5
 
-    # Test inserting additional value
-    my_list.insert('d')
-    expected_output = "{ d } -> { a } -> { b } -> { c } -> NULL"
-    assert my_list.to_string() == expected_output
+def test_insert_multiple_linked_list():
+    linked_list = LinkedList()
+    linked_list.insert(5)
+    linked_list.insert(10)
+    linked_list.insert(15)
+    assert linked_list.head.value == 15
+    assert linked_list.head.next.value == 10
+    assert linked_list.head.next.next.value == 5
 
-    # Test Node objects
-    node_d = my_list.head
-    node_a = node_d.next
-    node_b = node_a.next
-    node_c = node_b.next
 
-    assert node_d.value == 'd'
-    assert node_a.value == 'a'
-    assert node_b.value == 'b'
-    assert node_c.value == 'c'
-    assert node_d.next == node_a
-    assert node_a.next == node_b
-    assert node_b.next == node_c
-    assert node_c.next is None
+def test_find_existing_value():
+    linked_list = LinkedList()
+    linked_list.insert(5)
+    linked_list.insert(10)
+    linked_list.insert(15)
+    assert linked_list.includes(10) == True
 
-    print("All tests passed!")
 
-# Run the test
-test_linked_list()
+def test_find_non_existing_value():
+    linked_list = LinkedList()
+    linked_list.insert(5)
+    linked_list.insert(10)
+    linked_list.insert(15)
+    assert linked_list.includes(20) == False
 
+
+def test_to_string():
+    linked_list = LinkedList()
+    linked_list.insert(5)
+    linked_list.insert(10)
+    linked_list.insert(15)
+    assert linked_list.to_string() == "{ 15 } -> { 10 } -> { 5 } -> NULL"
+
+def test_append_linked_list():
+    linked_list = LinkedList()
+    linked_list.append(5)
+    assert linked_list.head.value == 5
+
+
+def test_append_multiple_linked_list():
+    linked_list = LinkedList()
+    linked_list.append(5)
+    linked_list.append(10)
+    linked_list.append(15)
+    assert linked_list.head.value == 5
+    assert linked_list.head.next.value == 10
+    assert linked_list.head.next.next.value == 15
+
+
+def test_insert_before_linked_list_middle():
+    linked_list = LinkedList()
+    linked_list.insert(5)
+    linked_list.insert(10)
+    linked_list.insert(15)
+    linked_list.insert_before(10, 20)
+    assert linked_list.to_string(
+    ) == "{ 15 } -> { 20 } -> { 10 } -> { 5 } -> NULL"
+
+def test_insert_before_linked_list_first():
+    linked_list = LinkedList()
+    linked_list.insert(5)
+    linked_list.insert(10)
+    linked_list.insert(15)
+    linked_list.insert_before(15, 20)
+    assert linked_list.to_string(
+    ) == "{ 20 } -> { 15 } -> { 10 } -> { 5 } -> NULL"
+
+
+def test_insert_after_linked_list_middle():
+    linked_list = LinkedList()
+    linked_list.insert(5)
+    linked_list.insert(10)
+    linked_list.insert(15)
+    linked_list.insert_after(10, 20)
+    assert linked_list.to_string(
+    ) == "{ 15 } -> { 10 } -> { 20 } -> { 5 } -> NULL"
+
+
+def test_insert_after_linked_list_last():
+    linked_list = LinkedList()
+    linked_list.insert(5)
+    linked_list.insert(10)
+    linked_list.insert(15)
+    linked_list.insert_after(5, 20)
+    assert linked_list.to_string(
+    ) == "{ 15 } -> { 10 } -> { 5 } -> { 20 } -> NULL"
