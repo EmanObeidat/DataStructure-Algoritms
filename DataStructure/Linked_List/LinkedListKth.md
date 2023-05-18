@@ -1,41 +1,23 @@
 # White board
-![cc7](./cc7.png)
-# Approach & Efficiency
-```
-I created a method for delete in Linked list class, Also method that gets the length of the linked list
-```
+![cc7](./Untitled%20(11).jpg)
+
 # Solution
 ```
-def delete(self, value):
-        current_node = self.head
-        if current_node and current_node.value == value:
-            self.head = current_node.next
-            current_node = None
-            return
+ def kth_from_end(self, k):
+        p1 = self.head
+        p2 = self.head
 
-        previous_node = None
-        while current_node and current_node.value != value:
-            previous_node = current_node
-            current_node = current_node.next
+        # Move the p1 pointer ahead by k positions
+        for _ in range(k):
+            if p1 is None:
+                return None  # List is shorter than k elements
+            p1 = p1.next
 
-        if current_node is None:
-            return
+        # Move both the p1 and p2 pointers until the p1 pointer reaches the end
+        while p1.next is not None:
+            p1 = p1.next
+            p2 = p2.next
 
-        previous_node.next = current_node.next
-        current_node = None
-
-
-    def kth_from_end(self, k):
-        if k <= 0:
-            return None
-
-        # Get the length of the linked list
-        length = 0
-        current = self.head
-        while current:
-            length += 1
-            current = current.next
-
-        if k > length:
-            return None
+        # Return the value of the node pointed to by the p2 pointer
+        return p2.value
 ```
