@@ -33,6 +33,7 @@ class LinkedList:
             current = current.next
         result += "NULL"
         return result
+# Code Challenge 6
     def append(self, new_value):
         new_node = Node(new_value)
         if self.head is None:
@@ -67,18 +68,40 @@ class LinkedList:
             new_node.next = current.next
             current.next = new_node
 
+
+# Code Challenge 7
+
+    def kth_from_end(self, k):
+        p1 = self.head
+        p2 = self.head
+
+        # Move the p1 pointer ahead by k positions
+        for _ in range(k):
+            if p1 is None:
+                return None  # List is shorter than k elements
+            p1 = p1.next
+
+        # Move both the p1 and p2 pointers until the p1 pointer reaches the end
+        while p1.next is not None:
+            p1 = p1.next
+            p2 = p2.next
+
+        # Return the value of the node pointed to by the p2 pointer
+        return p2.value
 # Create an empty linked list
 my_list = LinkedList()
 
 # Insert values
-my_list.insert('c')
-my_list.insert('b')
-my_list.insert('a')
+# my_list.insert('c')
+# my_list.insert('b')
+# my_list.insert('a')
 my_list.append(1)
 my_list.append(2)
 my_list.append(3)
-my_list.insert_before(2, 5)
-my_list.insert_after(2, 7)
+my_list.append(4)
+
+# my_list.insert_before(2, 5)
+# my_list.insert_after(2, 7)
 
 # Check if a value exists
 print(my_list.includes('b'))  # Output: True
@@ -86,3 +109,5 @@ print(my_list.includes('d'))  # Output: False
 
 # Convert the linked list to a string representation
 print(my_list.to_string())  # Output: "{ a } -> { b } -> { c } -> NULL"
+list1=LinkedList().kth_from_end(1)
+print(list1)
