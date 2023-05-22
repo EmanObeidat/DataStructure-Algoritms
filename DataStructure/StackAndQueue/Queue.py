@@ -62,7 +62,7 @@ class Queue:
             return True
         else:
             return False
-# return the values of queue in a string       
+# return the values of queue in a string.    
     def __str__(self):
         current=self.front
         string=""
