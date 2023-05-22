@@ -6,7 +6,7 @@ class Node :
 class Stack:
     def __init__(self,top=None):
         self.top = top
-
+# Push method will create new node and add it to the top of stack
     def push(self,value):
         node=Node(value)
         if self.top is None:
@@ -14,7 +14,7 @@ class Stack:
         else:
             node.next=self.top
             self.top=node
-
+# Pop method remove the top value from stack
     def pop(self):
         if self.top is None:
             raise EmptyError("Stack is empty!")
@@ -23,20 +23,20 @@ class Stack:
             self.top=temp.next
             temp.next=None
         return temp.value
-
+# Peek method return the top value
     def peek(self):
         if self.top is None:
             raise EmptyError("Stack is empty!")
         else:
             return self.top.value
-        
+# check if the stack is empty return true otherwise false  
     def is_empty(self):
         if self.top is None:
             return True
         else:
             return False
         
-
+# This function will return the values of stack as string
     def __str__(self):
         current=self.top
         string=""

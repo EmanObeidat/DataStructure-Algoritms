@@ -8,7 +8,7 @@ class Queue:
     def __init__(self,front=None,back=None):
         self.front=front
         self.back=back
-        
+# enqueue will create new node and add it to the back of queue
     def enqueue(self,value):
         node=Node(value)
         if self.front is None:
@@ -17,7 +17,7 @@ class Queue:
         else:
             self.back.next=node
             self.back=node
-    
+# remove the top node 
     def dequeue(self):
         if self.front is None:
             raise EmptyError("Stack is empty!")
@@ -26,19 +26,19 @@ class Queue:
             self.front=temp.next
             temp.next=None
         return temp.value
-    
+# return the top node's value  
     def peek(self):
         if self.front is None:
             raise EmptyError("Stack is empty!")
         else:
             return self.front.value
-        
+# check if queue is empty and return true otherwise false       
     def is_empty(self):
         if self.front is None:
             return True
         else:
             return False
-        
+# return the values of queue in a string       
     def __str__(self):
         current=self.front
         string=""
