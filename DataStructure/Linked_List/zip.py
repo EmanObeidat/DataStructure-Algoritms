@@ -15,7 +15,6 @@ class LinkedList:
 		# 4. Move the head to point to
 		# new Node
 		self.head = new_node
-		
 	"""
     Function to print linked list from
 	the Head
@@ -24,8 +23,7 @@ class LinkedList:
 		temp = self.head
 		while temp != None:
 			print(temp.value)
-			temp = temp.next
-			
+			temp = temp.next		
 	"""
 	 we need single pointer for first list and
 	 double pointer for second list.
