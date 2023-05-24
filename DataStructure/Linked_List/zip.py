@@ -66,19 +66,19 @@ llist1.push(0)
 # 2.
 for i in range(8, 3, -1):
 	llist2.push(i)
+if __name__=="__main__":
+	print("First Linked List:")
+	llist1.printList()
 
-print("First Linked List:")
-llist1.printList()
+	print("Second Linked List:")
+	llist2.printList()
 
-print("Second Linked List:")
-llist2.printList()
+	# Merging the LLs
+	llist1.merge(p=llist1, q=llist2)
 
-# Merging the LLs
-llist1.merge(p=llist1, q=llist2)
+	print("Modified first linked list:")
+	llist1.printList()
 
-print("Modified first linked list:")
-llist1.printList()
-
-print("Modified second linked list:")
-llist2.printList()
+	print("Modified second linked list:")
+	llist2.printList()
 
