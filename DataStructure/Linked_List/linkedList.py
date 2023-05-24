@@ -88,6 +88,14 @@ class LinkedList:
 
         # Return the value of the node pointed to by the p2 pointer
         return p2.value
+
+
+# Code challenge 8
+
+
+
+
+
 # Create an empty linked list
 my_list = LinkedList()
 
@@ -109,5 +117,5 @@ print(my_list.includes('d'))  # Output: False
 
 # Convert the linked list to a string representation
 print(my_list.to_string())  # Output: "{ a } -> { b } -> { c } -> NULL"
-list1=LinkedList().kth_from_end(1)
-print(list1)
+listt=LinkedList().kth_from_end(1)
+print(listt)
