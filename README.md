@@ -13,7 +13,8 @@
 |CC(7)|[Linked-list-kth](./DataStructure/Linked_List/LinkedListKth.md)|
 |CC(8)|[Stack And Queue](./DataStructure/StackAndQueue/StackAndQueue.md)|
 |CC(9)|[Linked List Zip](./DataStructure/Linked_List/LinkedLZip.md)|
-| CC10| [interview](./cc10.md)
+| CC10| [interview](./cc10.md)|
+|CC 11|[PseudoQueue](./DataStructure/StackAndQueue/pseudoQueue.md)
 
 
 
