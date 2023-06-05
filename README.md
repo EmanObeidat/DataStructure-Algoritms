@@ -16,6 +16,6 @@
 | CC10| [interview](./cc10.md)|
 |CC 11|[PseudoQueue](./DataStructure/StackAndQueue/pseudoQueue.md)|
 | CC 12|[animal shelter](./DataStructure/StackAndQueue/CC12.md)|
-
+|CC 13|[Brackets](./DataStructure/StackAndQueue/CC13.md)
 
 
