@@ -1,30 +1,44 @@
+class Node: #class for creating a node 
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+class Stack: 
+    def __init__(self):
+        self.top = None
+# push node into the top of stack
+    def push(self, value):
+        new_node = Node(value)
+        if not self.top:
+            self.top = new_node
+        else:
+            new_node.next = self.top
+            self.top = new_node
+# pop the top node
+    def pop(self):
+        if not self.top:
+            raise Exception("Stack is empty!!")
+        value = self.top.value
+        self.top = self.top.next
+        return value
+# return the top
+    def peek(self):
+        if not self.top:
+            raise Exception("Stack is empty!!")
+        return self.top.value
+# check if the stack is empty or not 
+    def is_empty(self):
+        return not bool(self.top)   
 def validate_brackets(string):
-    stack = []  # Stack to store opening brackets
+    stack = Stack()
+    bracket_pairs = {'(': ')', '[': ']', '{': '}'}
 
-    # Define the mapping of opening brackets to closing brackets
-    brackets_map = {
-        '(': ')',
-        '[': ']',
-        '{': '}'
-    }
-
-    # Iterate through each character in the string
     for char in string:
-        # If the character is an opening bracket, push it onto the stack
-        if char in brackets_map.keys():
-            stack.append(char)
-        # If the character is a closing bracket
-        elif char in brackets_map.values():
-            # Check if the stack is empty or the top of the stack doesn't match the closing bracket
-            if not stack or char != brackets_map[stack.pop()]:
+        if char in bracket_pairs.keys():
+            stack.push(char)
+        elif char in bracket_pairs.values():
+            if stack.is_empty() or bracket_pairs[stack.pop()] != char:
                 return False
-
-    # If there are any remaining opening brackets in the stack, return False
-    if stack:
-        return False
-
-    # If all brackets are balanced, return True
-    return True
+    return stack.is_empty()
 string1 = "(([{()}]))"
 print(validate_brackets(string1))  # Output: True
 
