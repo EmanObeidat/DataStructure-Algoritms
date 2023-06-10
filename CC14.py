@@ -27,7 +27,6 @@ max_stack.push(8)
 max_stack.push(3)
 
 print(max_stack.getMax())  # Output: 8
-
 max_stack.push(12)
 print(max_stack.getMax()) # output 12
 print(max_stack.pop())     # Output: 12
@@ -35,7 +34,6 @@ print(max_stack.pop())     # Output: 12
 print(max_stack.getMax())  # Output: 8
 
 print(max_stack.pop())     # Output: 3
-
 print(max_stack.getMax())  # Output: 8
 print(max_stack.pop()) # output 8
 print(max_stack.getMax()) #output 5
