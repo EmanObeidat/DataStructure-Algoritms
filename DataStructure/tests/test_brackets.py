@@ -14,7 +14,6 @@ def test_invalid_brackets():
     assert validate_brackets("(](") is False
     assert validate_brackets("{(})") is False
 
-
 def test_empty_string():
     assert validate_brackets("") is True
 
