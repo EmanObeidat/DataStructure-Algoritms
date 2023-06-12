@@ -45,7 +45,20 @@ class BinaryTree:
             self.postorder_traversal(node.left, result)
             self.postorder_traversal(node.right, result)
             result.append(node.value)
-
+    def find_maximum_value(self):
+        if self.root is None:
+            return None
+        
+        def max_value_recursive(node):
+            if node is None:
+                return float('-inf')
+            
+            left_max = max_value_recursive(node.left)
+            right_max = max_value_recursive(node.right)
+            
+            return max(node.value, left_max, right_max)
+        
+        return max_value_recursive(self.root)
 
 class BinarySearchTree(BinaryTree):
 
@@ -79,6 +92,17 @@ class BinarySearchTree(BinaryTree):
             return self._contains_helper(node.left, value)
         else:
             return self._contains_helper(node.right, value)
+    
+
+    
+
+
+
+
+
+
+
+
 # Creating a binary tree
 tree = BinaryTree()
 tree.root = Node(1)
@@ -113,3 +137,8 @@ bst.add(20)
 # Check if values are present in the BST
 print("Contains 7:", bst.contains(7))  # Output: True
 print("Contains 8:", bst.contains(8))  # Output: False
+binary_tree = BinaryTree()
+# Assume the binary tree is populated with values
+
+maximum_value = bst.find_maximum_value()
+print("The maximum value in the binary tree is:", maximum_value)
