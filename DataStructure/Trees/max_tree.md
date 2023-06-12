@@ -1,5 +1,5 @@
 # White board
-![cc16](./CC16.jpg)
+![cc16](./CC16%20(2).jpg)
 # Solution
 ```
 def find_maximum_value(self):
