@@ -8,8 +8,8 @@
 
 ## Whiteboard Process
 **Embedded whiteboard image**
-![Alt text](./WB3.png)
-![Alt text](./WB3-2.png)
+![Alt text](../assests/WB3.png)
+![Alt text](../assests/WB3-2.png)
 
 
 ## Approach & Efficiency

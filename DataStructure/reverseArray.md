@@ -1,7 +1,7 @@
 This challenge include how we can write python code that takes an array and return reverse array
 
 ## Whiteboard Process
-![Whiteboard](./Untitled%20(7).jpg)
+![Whiteboard](../assests/Untitled%20(7).jpg)
 
 ## Approach & Efficiency
 ```

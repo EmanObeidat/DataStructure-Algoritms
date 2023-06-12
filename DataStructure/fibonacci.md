@@ -1,5 +1,5 @@
 ## Whiteboard Process
-![fibonacci](./Untitled%20(9).jpg)
+![fibonacci](../assests/Untitled%20(9).jpg)
 ## Approach & Efficiency
 I used two ways to write fibonacci function, the first one by using recursion, and the second one by using iteration"for loop"
 ## Solution
