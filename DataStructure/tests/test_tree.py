@@ -1,8 +1,6 @@
 import pytest
 from Trees.Tree import BinaryTree, BinarySearchTree,Node
 
-
-
 @pytest.fixture
 def binary_tree():
     return BinaryTree()
