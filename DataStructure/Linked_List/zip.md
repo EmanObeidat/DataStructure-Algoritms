@@ -1,6 +1,6 @@
 # code challange 8
 ## White Board :
-![Zip](./cc8.jpg)
+![Zip](./CC8.jpg)
 ## Approach and effeincy :
 ```
 This code allow to merge two linked list in one list
