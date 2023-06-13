@@ -1,52 +1,70 @@
 import pytest
-from Linked_List.zip import LinkedList,Node
+from Linked_List.zip import Node,LinkedList,merge
 
+def test_empty_tow_lists():
+    list1=LinkedList()
+    list2=LinkedList()
+    with pytest.raises(Exception):
+        list1.merge(list2)
+        
+def test_one_empty1():
+    nodel1=Node(2)
+    nodel2=Node(3,nodel1)
+    nodel3=Node(1,nodel2)
+    list1=LinkedList(nodel3)
+    list2=LinkedList()
+    merge(list1,list2)
+    actual=list1.to_string()
+    expected="{1} -> {3} -> {2} -> Null"
+    assert actual==expected
 
+def test_one_empty2():
+    list1=LinkedList()
+    nodeli1=Node(4)
+    nodeli2=Node(9,nodeli1)
+    nodeli3=Node(5,nodeli2)
+    list2=LinkedList(nodeli3)
+    merge(list1,list2)
+    actual=list1.to_string()
+    expected="{5} -> {9} -> {4} -> Null"
+    assert actual==expected
 
-def test_linked_list_merge():
-    # Creating two Linked lists
-    llist1 = LinkedList()
-    llist2 = LinkedList()
+def test_same_long():
+    nodel1=Node(2)
+    nodel2=Node(3,nodel1)
+    nodel3=Node(1,nodel2)
+    list1=LinkedList(nodel3)
+    nodeli1=Node(4)
+    nodeli2=Node(9,nodeli1)
+    nodeli3=Node(5,nodeli2)
+    list2=LinkedList(nodeli3)
+    merge(list1,list2)
+    actual=list1.to_string()
+    expected="{1} -> {5} -> {3} -> {9} -> {2} -> {4} -> Null"
+    assert actual==expected
 
-    # 1. First Linked List: 0 -> 1 -> 2 -> 3
-    llist1.push(3)
-    llist1.push(2)
-    llist1.push(1)
-    llist1.push(0)
+def test_one_longer1():
+    nodel2=Node(3)
+    nodel3=Node(1,nodel2)
+    list1=LinkedList(nodel3)
+    nodeli1=Node(4)
+    nodeli2=Node(9,nodeli1)
+    nodeli3=Node(5,nodeli2)
+    list2=LinkedList(nodeli3)
+    merge(list1,list2)
+    actual=list1.to_string()
+    expected="{1} -> {5} -> {3} -> {9} -> {4} -> Null"
+    assert actual==expected
 
-    # 2. Second Linked List: 8 -> 7 -> 6 -> 5 -> 4
-    for i in range(8, 3, -1):
-        llist2.push(i)
-
-    # Ensure the initial lists are correct
-    assert llist1.head.value == 0
-    assert llist1.head.next.value == 1
-    assert llist1.head.next.next.value == 2
-    assert llist1.head.next.next.next.value == 3
-    assert llist2.head.value == 8
-    assert llist2.head.next.value == 7
-    assert llist2.head.next.next.value == 6
-    assert llist2.head.next.next.next.value == 5
-    assert llist2.head.next.next.next.next.value == 4
-
-    # Merge the linked lists
-    llist1.merge(p=llist1, q=llist2)
-
-    # Ensure the merge operation modifies the first linked list correctly
-    assert llist1.head.value == 0
-    assert llist1.head.next.value == 8
-    assert llist1.head.next.next.value == 1
-    assert llist1.head.next.next.next.value == 7
-    assert llist1.head.next.next.next.next.value == 2
-    assert llist1.head.next.next.next.next.next.value == 6
-    assert llist1.head.next.next.next.next.next.next.value == 3
-    assert llist1.head.next.next.next.next.next.next.next.value == 5
-    assert llist1.head.next.next.next.next.next.next.next.next.value == 4
-
-    # Ensure the merge operation modifies the second linked list correctly
-    assert llist2.head is None
-
-    print("All test cases passed.")
-
-# Run the test
-test_linked_list_merge()
+def test_one_longer2():
+    nodel1=Node(2)
+    nodel2=Node(3,nodel1)
+    nodel3=Node(1,nodel2)
+    list1=LinkedList(nodel3)
+    nodeli2=Node(9)
+    nodeli3=Node(5,nodeli2)
+    list2=LinkedList(nodeli3)
+    merge(list1,list2)
+    actual=list1.to_string()
+    expected="{1} -> {5} -> {3} -> {9} -> {2} -> Null"
+    assert actual==expected
