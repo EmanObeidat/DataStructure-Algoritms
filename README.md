@@ -20,6 +20,6 @@
 |CC(14)|[interview](./CC14.md)|
 |CC(15)|[Trees](./DataStructure/Trees/Tree.md)|
 |CC(16)|[max-tree](./DataStructure/Trees/max_tree.md)|
-|CC(26)[insertion_sort](./DataStructure/Linked_List/insertionSort.md)|
+|CC(26)|[insertion_sort](./DataStructure/Linked_List/insertionSort.md)|
 
 
