@@ -1,4 +1,11 @@
 # Tracing a Pseudocode
+## White board:
+![cc26](./CC26.jpg)
+
+## Approach and effiency
+Insert and insertion_sort are the two methods that make up the Sort class definition. The class is in charge of inserting a sort on a list.A value and a sorted list are the inputs for the insert method. It locates the value's proper location in the sorted list so that the order of the list is preserved. While iterating backwards through the list, the procedure compares the value with each entry using a while loop. The element is moved one position to the right if the value is smaller than the one in the current position. The value is entered into the list using the insert method of the list object after the right position has been identified.
+
+
 ## Pseudocode
 ```
 Insert(int[] sorted, int value)
@@ -42,5 +49,3 @@ def insertion_sort(input_arr):
         insert(sorted_arr, input_arr[i])
     return sorted_arr
 ```
-## White board:
-![cc26](./CC26.jpg)

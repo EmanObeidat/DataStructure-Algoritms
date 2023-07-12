@@ -1,4 +1,21 @@
 def insert(sorted_arr, value):
+    '''
+    
+    Inserts a value into a sorted array in its appropriate position.
+
+    Args:
+        sorted_arr (list): A sorted list of values in ascending order.
+        value: The value to be inserted into the sorted array.
+
+    Returns:
+        None: The function modifies the sorted_arr in-place.
+
+    Description:
+        This function inserts the given value into the sorted_arr such that the resulting array remains sorted in
+        ascending order. It finds the appropriate position for the value by comparing it to each element in the array,
+        starting from the beginning, until it finds an element that is greater than the value. It then shifts the
+        remaining elements one position to the right and inserts the value into the correct position.
+    '''
     i = 0
     while value > sorted_arr[i]:
         i += 1
@@ -12,6 +29,20 @@ def insert(sorted_arr, value):
     sorted_arr.append(value)
 
 def insertion_sort(input_arr):
+    '''
+    Sorts a list of values using the insertion sort algorithm.
+
+    Args:
+        input_arr (list): A list of values to be sorted.
+
+    Returns:
+        list: The sorted list of values in ascending order.
+
+    Description:
+        This function sorts the input_arr using the insertion sort algorithm. It iterates over each element in the input
+        array, starting from the second element. For each element, it calls the insert function to insert the element into
+        the appropriate position in the sorted_arr. Finally, it returns the sorted_arr.
+    '''
     if not input_arr:
         return []
     sorted_arr = [input_arr[0]]

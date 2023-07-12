@@ -1,15 +1,17 @@
 from Linked_List.insertionSort import insert,insertion_sort
-def test_positive_numbers():
-    actual = insertion_sort([5,7,8,6,1,7,4])
-    expected = [1,4,5,5,6,7,7,8]
-    actual == expected
 
-def test_negative_numbers():
-    actual = insertion_sort([-1,-5,-9,-7])
-    expected = [-9,-7,-5,-1]
-    actual == expected
-
-def test_mixed_numbers():
-    actual = insertion_sort([0,5,2,-1,7,1000])
-    expected = [-1,0,2,5,7,1000]
-    actual == expected
+def test_happy_path():
+    """Test happy path."""
+    assert insertion_sort([8, 4, 23, 42, 16, 15]) == [4, 8, 15, 16, 23, 42]
+def test_empty():
+    """Test empty."""
+    assert insertion_sort([]) == []
+def test_reverse_order():
+    """Test reverse order."""
+    assert insertion_sort([20, 18, 12, 8, 5, -2]) == [-2, 5, 8, 12, 18, 20]
+def test_few_uniques():
+    """Test few uniques."""
+    assert insertion_sort([5, 12, 7, 5, 5, 7]) == [5, 5, 5, 7, 7, 12]
+def test_nearly_sorted():
+    """Test nearly sorted."""
+    assert insertion_sort([2, 3, 5, 7, 13, 11]) == [2, 3, 5, 7, 11, 13]
