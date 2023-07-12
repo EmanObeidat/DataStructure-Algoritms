@@ -21,5 +21,6 @@
 |CC(15)|[Trees](./DataStructure/Trees/Tree.md)|
 |CC(16)|[max-tree](./DataStructure/Trees/max_tree.md)|
 |CC(26)|[insertion_sort](./DataStructure/Linked_List/insertionSort.md)|
+|cc(27)|[merging sort](./DataStructure/Linked_List/merging_sort.md)|
 
 
