@@ -1,5 +1,5 @@
 import pytest
-from sorting_comparison.sort_comparison import Movie, sort_by_recent_year, sort_alphabetically_ignore_articles
+from Linked_List.comparasion import Movie, sort_by_recent_year, sort_alphabetically_ignore_articles
 
 @pytest.fixture
 def sample_movies():
