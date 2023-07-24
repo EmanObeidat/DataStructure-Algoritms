@@ -23,5 +23,6 @@
 |CC(26)|[insertion_sort](./DataStructure/Linked_List/insertionSort.md)|
 |cc(27)|[merging sort](./DataStructure/Linked_List/merging_sort.md)|
 |C(28)|[Hash table](./hashtable.md)|
+|CC(29)|[Repteated word](./repeated_word.md)|
 
 
