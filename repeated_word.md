@@ -3,7 +3,8 @@
 
 ## [Code](hashmap-repeated-word.py)
 ## [tests](../tests/test_hash_map.py)
-
+## White board:
+![wb](./repeated_word.jpg)
  ## Approach and effiency:
 Write a function called repeated word that finds the first word to occur more than once in a string
 Arguments: string
