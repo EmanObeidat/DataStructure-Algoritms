@@ -1,7 +1,7 @@
 class Node:
     def __init__(self, value):
         self.value = value
-        self.next = None
+        self.next = next
 
 class LinkedList:
     def __init__(self):
@@ -77,7 +77,7 @@ class LinkedList:
 
         # Move the p1 pointer ahead by k positions
         for _ in range(k):
-            if p1 is None:
+            if p1 is None: 
                 return None  # List is shorter than k elements
             p1 = p1.next
 

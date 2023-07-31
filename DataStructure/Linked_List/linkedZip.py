@@ -30,7 +30,7 @@ class LinkedList:
             current = current.next
         a+="Null"
         return a
-def merge(list, other):
+    def merge(list, other):
         """
         Merges two linked lists by alternating their elements.
         """
