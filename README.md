@@ -24,6 +24,7 @@
 |cc(27)|[merging sort](./DataStructure/Linked_List/merging_sort.md)|
 |C(28)|[Hash table](./hashtable.md)|
 |CC(29)|[Repteated word](./repeated_word.md)|
-|CC(30)|[Tree intersection](./DataStructure/Trees/tree_intersection.md)
+|CC(30)|[Tree intersection](./DataStructure/Trees/tree_intersection.md)|
+|CC31|[hash join left](./DataStructure/Hash/left_join.md)|
 
 

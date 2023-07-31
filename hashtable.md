@@ -2,7 +2,7 @@
 # Hash table
 
 
-## [Code](./DataStructure/hashtable.py)
+## [Code](./DataStructure/Hash/hashtable.py)
 ## [tests](./DataStructure/tests/test_hashtable.py)
 
 ## Approach & Efficiency
