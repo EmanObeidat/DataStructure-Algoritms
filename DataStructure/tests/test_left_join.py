@@ -1,49 +1,40 @@
-from hashtable import HashTable
 import pytest
-from left_join import hashmap_left_join
+from Hash.hashtable import HashTable
+from Hash.left_join import hashmap_left_join
+
 def test_hashmap_left_join():
-   
     table1 = HashTable()
     table2 = HashTable()
 
-    table1.put("happy", "joyful")
-    table1.put("sad", "unhappy")
-    table1.put("hot", "warm")
-    table1.put("cold", "chilly")
+    table1.set("apple", "red")
+    table1.set("banana", "yellow")
+    table1.set("grape", "purple")
 
-    table2.put("happy", "sad")
-    table2.put("hot", "cold")
-    table2.put("rich", "poor")
-
-    result = hashmap_left_join(table1, table2)
-    assert result == [
-        ["happy", "joyful", "sad"],
-        ["sad", "unhappy", None],
-        ["hot", "warm", "cold"],
-        ["cold", "chilly", None]
-    ]
-
-def test_hashmap_left_join_empty_tables():
-    table1 = HashTable()
-    table2 = HashTable()
+    table2.set("apple", "green")
+    table2.set("orange", "orange")
 
     result = hashmap_left_join(table1, table2)
 
-    assert result == []
+    assert result.get("apple") == ["red", "green"]
+    assert result.get("banana") == ["yellow", None]
+    assert result.get("grape") == ["purple", None]
 
-def test_hashmap_left_join_missing_keys():
-    table1 = HashTable()
-    table2 = HashTable()
+    empty_table1 = HashTable()
+    empty_table2 = HashTable()
 
-    table1.put("happy", "joyful")
-    table1.put("sad", "unhappy")
-    table2.put("happy", "sad")
-    table2.put("rich", "poor")
+    empty_result = hashmap_left_join(empty_table1, empty_table2)
+    assert len(empty_result.keys()) == 0
 
-    result = hashmap_left_join(table1, table2)
+    table3 = HashTable()
+    table3.set("apple", "red")
+    table3.set("banana", "yellow")
 
-    assert result == [
-        ["happy", "joyful", "sad"],
-        ["sad", "unhappy", None]
-    ]
+    empty_result = hashmap_left_join(table3, empty_table2)
+    assert empty_result.get("apple") == ["red", None]
+    assert empty_result.get("banana") == ["yellow", None]
 
+    empty_result = hashmap_left_join(empty_table1, table3)
+    assert len(empty_result.keys()) == 0
+
+if __name__ == "__main__":
+    pytest.main()
