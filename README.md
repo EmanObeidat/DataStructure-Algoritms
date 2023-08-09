@@ -26,5 +26,8 @@
 |CC(29)|[Repteated word](./repeated_word.md)|
 |CC(30)|[Tree intersection](./DataStructure/Trees/tree_intersection.md)|
 |CC31|[hash join left](./DataStructure/Hash/left_join.md)|
+|CC 32|[unique char](./DataStructure/Hash/uniquechar.md)|
+|max_depth|[max depth tree](./DataStructure/Trees/max_depth.md)|
+|is_symmatric_tree|[is_symmatric_tree](./DataStructure/Trees/is_symmatric.md)
 
 
