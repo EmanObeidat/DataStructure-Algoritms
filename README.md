@@ -29,6 +29,7 @@
 |CC 32|[unique char](./DataStructure/Hash/uniquechar.md)|
 |max_depth|[max depth tree](./DataStructure/Trees/max_depth.md)|
 |is_symmatric_tree|[is_symmatric_tree](./DataStructure/Trees/is_symmatric.md)|
-|CC35|[Graph](./DataStructure/graph/graph.md)
+|CC35|[Graph](./DataStructure/graph/graph.md)|
+|CC37|[Graph_Business](./DataStructure/graph/graph_business.md)|
 
 
