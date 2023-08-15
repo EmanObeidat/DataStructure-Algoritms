@@ -1,19 +1,16 @@
-class Graph:
-    def __init__(self):
-        self.graph = {}
-        
-    def add_edge(self, city1, city2, cost):
-        if city1 not in self.graph:
-            self.graph[city1] = {}
-        self.graph[city1][city2] = cost
-        
-    def get_cost(self, city1, city2):
-        if city1 in self.graph and city2 in self.graph[city1]:
-            return self.graph[city1][city2]
-        return None
-
+from graph import Graph
 
 def business_trip(graph, cities):
+    """
+    Calculates the total cost of a business trip through the specified cities using the provided graph.
+
+    Args:
+        graph (Graph): The graph representing city connections and costs.
+        cities (list): A list of cities representing the trip route.
+
+    Returns:
+        The total cost of the trip, or None if the trip is not possible.
+    """
     if len(cities) < 2:
         print("Trip is not possible due to insufficient cities.")
         return None
@@ -29,7 +26,7 @@ def business_trip(graph, cities):
     print(f"Total cost of the trip: {total_cost}")
     return total_cost
 
-
+# Test graph and cities
 test_graph = Graph()
 test_graph.add_edge('A', 'B', 100)
 test_graph.add_edge('B', 'C', 150)

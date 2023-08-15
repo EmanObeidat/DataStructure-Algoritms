@@ -9,20 +9,6 @@ Write a function that takes in a graph and an array of city names and Return: th
 
 ## Solution:
 ```
-class Graph:
-    def __init__(self):
-        self.graph = {}
-        
-    def add_edge(self, city1, city2, cost):
-        if city1 not in self.graph:
-            self.graph[city1] = {}
-        self.graph[city1][city2] = cost
-        
-    def get_cost(self, city1, city2):
-        if city1 in self.graph and city2 in self.graph[city1]:
-            return self.graph[city1][city2]
-        return None
-
 
 def business_trip(graph, cities):
     if len(cities) < 2:

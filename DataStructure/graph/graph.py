@@ -19,7 +19,7 @@ class Graph:
         Initializes an empty graph with no vertices or edges.
         """
         self.vertices = {}
-    
+        self.graph = {}
     def add_vertex(self, value):
         """
         Adds a vertex to the graph with the specified value if it doesn't already exist.
@@ -82,8 +82,34 @@ class Graph:
             The number of vertices.
         """
         return len(self.vertices)
+    
+    def add_edge(self, city1, city2, cost):
+        """
+        Adds a directed edge between city1 and city2 with the specified cost.
 
+        Args:
+            city1: The source city.
+            city2: The destination city.
+            cost: The cost of the edge between the cities.
+        """
+        if city1 not in self.graph:
+            self.graph[city1] = {}
+        self.graph[city1][city2] = cost
+    
+    def get_cost(self, city1, city2):
+        """
+        Returns the cost of the edge between city1 and city2, if it exists.
 
+        Args:
+            city1: The source city.
+            city2: The destination city.
+
+        Returns:
+            The cost of the edge if it exists, otherwise None.
+        """
+        if city1 in self.graph and city2 in self.graph[city1]:
+            return self.graph[city1][city2]
+        return None
 # Example usage
 graph = Graph()
 
@@ -95,6 +121,6 @@ graph.add_edge(v1, v2, 5)
 graph.add_edge(v2, v3, 3)
 graph.add_edge(v3, v1, 2)
 
-print("Vertices:", graph.get_vertices())
-print("Neighbors of v1:", graph.get_neighbors(v1))
-print("Number of vertices:", graph.size())
+# print("Vertices:", graph.get_vertices())
+# print("Neighbors of v1:", graph.get_neighbors(v1))
+# print("Number of vertices:", graph.size())
