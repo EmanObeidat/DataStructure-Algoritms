@@ -1,8 +1,9 @@
-## challane:
+## challange:
 Write a function that takes in a graph and an array of city names and Return: the cost of the trip (if it’s possible) or null (if not)
 ## White board:
 ![wb](./cc37.jpg)
-
+## [code](./graph_business_trip.py)
+## [test](../tests/test_graph_business.py|)
 ## Approach & Efficiency
 **The time complexity is O(n), where n is the number of cities in the cities array.**
 **The space complexity is O(m), where m represents the number of direct flight connections in the graph**
