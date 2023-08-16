@@ -110,6 +110,7 @@ class Graph:
         if city1 in self.graph and city2 in self.graph[city1]:
             return self.graph[city1][city2]
         return None
+    
 # Example usage
 graph = Graph()
 
