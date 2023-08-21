@@ -1,13 +1,47 @@
 class Graph:
+    """
+    A class representing an undirected graph and providing methods for graph operations.
+    
+    Attributes:
+        graph (dict): A dictionary representing the graph structure where each node maps to its neighbors.
+        
+    Methods:
+        __init__(): Initializes an empty graph.
+        
+        add_edge(node, neighbor): Adds an edge between the given node and neighbor in the graph.
+        
+        depth_first(node): Performs a depth-first traversal starting from the given node.
+        
+    """
+    
     def __init__(self):
+        """
+        Initializes an empty graph.
+        """
         self.graph = {}
 
     def add_edge(self, node, neighbor):
+        """
+        Adds an edge between the given node and neighbor in the graph.
+        
+        Args:
+            node: The starting node of the edge.
+            neighbor: The neighbor node connected to the starting node.
+        """
         if node not in self.graph:
             self.graph[node] = []
         self.graph[node].append(neighbor)
 
     def depth_first(self, node):
+        """
+        Performs a depth-first traversal starting from the given node.
+        
+        Args:
+            node: The starting node for the depth-first traversal.
+        
+        Returns:
+            list: A list containing the nodes visited during the depth-first traversal.
+        """
         visited = set()
         result = []
 
@@ -22,6 +56,7 @@ class Graph:
 
         dfs(node)
         return result
+
 if __name__ == "__main__":
     graph = Graph()
     graph.add_edge("A", "B")
